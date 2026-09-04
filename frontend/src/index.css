@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3 {
+    @apply font-display text-ink;
+  }
+  ::selection {
+    @apply bg-havecolor2;
+  }
+}
+
+@layer components {
+  /* A "ledger row": the recurring skill/data-row treatment used across the
+     dashboard, skill-gap and roadmap screens instead of generic rounded
+     cards — evokes a mark-sheet / lab-report readout. */
+  .ledger-row {
+    @apply flex items-center justify-between gap-4 border-b border-line py-3 last:border-b-0;
+  }
+
+  .score-track {
+    @apply h-1.5 w-full rounded-full bg-line/50 overflow-hidden;
+  }
+
+  .score-fill-have {
+    @apply h-full rounded-full bg-havecolor;
+  }
+
+  .score-fill-gap {
+    @apply h-full rounded-full bg-gapcolor;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-sm bg-ink text-paper px-5 py-2.5 font-medium tracking-tight hover:bg-ink/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-sm border border-ink/20 text-ink px-5 py-2.5 font-medium tracking-tight hover:border-ink/50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .field-input {
+    @apply w-full border-b-2 border-line bg-transparent py-2 outline-none focus:border-ink transition-colors;
+  }
+
+  .tag-chip {
+    @apply inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-sm font-mono;
+  }
+}
